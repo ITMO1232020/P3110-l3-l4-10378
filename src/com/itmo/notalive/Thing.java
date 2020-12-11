@@ -55,5 +55,8 @@ public class Thing {
         return how == null ? "" : how;
     }
 
+    public Thing getTo() {
+        return to;
+    }
 
 }
