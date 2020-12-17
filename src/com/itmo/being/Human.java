@@ -1,43 +1,42 @@
 package com.itmo.being;
 
 import java.util.List;
-
 import com.itmo.notalive.*;
 import com.itmo.spell.*;
 
-public class Human extends Creater {
+public class Human extends Creator {
 
     private Thing to;
     private Thing second;
     private Partner bro;
-    private final boolean config = true;
+    private static final boolean config = true;
 
     public Human() {
     }
 
-    public Human(String nickname, List<Spell> skillist) {
-        super(nickname);
+    public Human(String name, List<Spell> skillist) {
+        super(name);
         setSkills(skillist);
     }
 
-    public Human(String nickname, List<Spell> skillist, Thing tothing) {
-        super(nickname);
+    public Human(String name, List<Spell> skillist, Thing to) {
+        super(name);
         setSkills(skillist);
-        to = tothing;
+        this.to = to;
     }
 
-    public Human(String nickname, List<Spell> skillist, Thing tothing, Thing secondthing) {
-        super(nickname);
+    public Human(String name, List<Spell> skillist, Thing to, Thing second) {
+        super(name);
         setSkills(skillist);
-        to = tothing;
-        second = secondthing;
+        this.to = to;
+        this.second = second;
     }
 
-    public Human(String nickname, String partner, List<Spell> skillist, Thing tothing, Thing secondthing) {
-        super(nickname);
+    public Human(String name, String partner, List<Spell> skillist, Thing to, Thing second) {
+        super(name);
         setSkills(skillist);
-        to = tothing;
-        second = secondthing;
+        this.to = to;
+        this.second = second;
         bro = new Partner(partner);
     }
 
@@ -47,18 +46,22 @@ public class Human extends Creater {
 
         private String partnerName;
 
-        public Partner(String pName) {
-            partnerName = pName;
+        public Partner(String partnerName) {
+            this.partnerName = partnerName;
         }
 
         public String getPartnerName() {
             return partnerName;
         }
     }
-
+    final int a = 1; //ЭТО ПОЛЕ ВО ВНЕШНЕМ КЛАССЕ Human
     public String getPartner() {
-        class Local {
+
+        class Local {//
+            final int a = 2; // ЭТО ПОЛЕ ЛОКАЛЬНОГО КЛАССА Local
             String shift() {
+                System.out.println(Human.this.a);
+                System.out.println(a);
                 if (config) {
                     return getName() + " и " + bro.partnerName;
                 } else {

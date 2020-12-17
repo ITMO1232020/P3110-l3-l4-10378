@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.itmo.being.*;
-import com.itmo.exception.*;
 import com.itmo.notalive.*;
 import com.itmo.spell.*;
 
@@ -49,7 +48,24 @@ public class Main {
         System.out.println(jojo.getName());
         Place city = new Place("Павлодар");
         System.out.println(city.getMap());
+        System.out.println(A.getC());
+
     }
 
+
+}
+class A {
+
+    public static A.B.C getC() {
+        B.C boop = new B.C();
+        return boop;
+    }
+
+    private static class B {
+
+        public static class C {
+
+        }
+    }
 }
 

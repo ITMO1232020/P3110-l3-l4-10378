@@ -2,44 +2,44 @@ package com.itmo.notalive;
 
 public class Thing {
 
-    private String type;
+    private String name;
     private String description;
     private String action;
     private String how;
     private Thing to;
 
-    public Thing(String retype) {
-        type = retype;
+    public Thing(String name) {
+        this.name = name;
     }
 
-    public Thing(String retype, String desc) {
-        type = retype;
-        description = desc;
+    public Thing(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
-    public Thing(String retype, String desc, String act) {
-        type = retype;
-        action = act;
-        description = desc;
+    public Thing(String name, String description, String action) {
+        this.name = name;
+        this.action = action;
+        this.description = description;
     }
 
-    public Thing(String retype, String desc, String act, String so) {
-        type = retype;
-        action = act;
-        description = desc;
-        how = so;
+    public Thing(String name, String description, String action, String how) {
+        this.name = name;
+        this.action = action;
+        this.description = description;
+        this.how = how;
     }
 
-    public Thing(String retype, String desc, String act, String so, Thing tothing) {
-        type = retype;
-        action = act;
-        description = desc;
-        how = so;
-        to = tothing;
+    public Thing(String name, String description, String action, String how, Thing to) {
+        this.name = name;
+        this.action = action;
+        this.description = description;
+        this.how = how;
+        this.to = to;
     }
 
     public String getName() {
-        return type;
+        return name;
     }
 
     public String getDescription() {

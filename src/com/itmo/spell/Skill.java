@@ -5,13 +5,13 @@ public class Skill implements Spell {
     private String name;
     private String how;
 
-    public Skill(String naming) {
-        name = naming;
+    public Skill(String name) {
+        this.name = name;
     }
 
-    public Skill(String naming, String info) {
-        name = naming;
-        how = info;
+    public Skill(String name, String how) {
+        this.name = name;
+        this.how = how;
     }
 
     public String getName() {

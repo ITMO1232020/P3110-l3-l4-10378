@@ -5,7 +5,7 @@ import java.util.List;
 import com.itmo.exception.*;
 import com.itmo.spell.Spell;
 
-public abstract class Creater {
+public abstract class Creator {
 
     private String name;
 
@@ -19,12 +19,12 @@ public abstract class Creater {
         return skills;
     }
 
-    protected Creater() {
+    protected Creator() {
         skills = new ArrayList<Spell>();
     }
 
-    protected Creater(String nickname) {
-        name = nickname;
+    protected Creator(String name) {
+        this.name = name;
         skills = new ArrayList<Spell>();
     }
 

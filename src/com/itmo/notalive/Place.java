@@ -3,27 +3,27 @@ package com.itmo.notalive;
 import com.itmo.exception.*;
 
 public class Place {
-    private String map;
-    private String info;
+    private String name;
+    private String description;
     private Thing has;
 
     public Place(String minimap) {
-        map = minimap;
+        name = minimap;
     }
 
-    public Place(String minimap, String condition) {
-        map = minimap;
-        info = condition;
+    public Place(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
-    public Place(String minimap, String condition, Thing got) {
-        map = minimap;
-        info = condition;
-        has = got;
+    public Place(String name, String description, Thing has) {
+        this.name = name;
+        this.description = description;
+        this.has = has;
     }
 
     public String miniMap() {
-        return map;
+        return name;
     }
 
     public static class Time {
@@ -38,19 +38,19 @@ public class Place {
         }
     }
 
-    public  String getInfo() throws DescException{
-        if (info == null) {
-            throw new DescException("Нет информации по " + map);
+    private  String getInfo() throws DescException{
+        if (description == null) {
+            throw new DescException("Нет информации по " + name);
         }
-        return  info;
+        return description;
     }
 
     public String getMap() {
         try {
-            return getInfo() + " " + map;
+            return getInfo() + " " + name;
         } catch (DescException ex) {
             System.err.print(ex.getMessage());
-            return map;
+            return name;
         }
         //return info == null ? map : map + " " + info;
     }
